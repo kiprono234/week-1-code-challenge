@@ -1,25 +1,30 @@
-function studentGrade(grade) {
-    //let grade = 0;
-    if (grade > 79 && grade <= 100) {
-        return 'A'
-    }
-    else if (grade > 60 && grade <= 79) {
-        return 'B'
-    }
-    else if (grade > 49 && grade <= 59) {
-        return 'C'
-
-    }
-    else if (grade > 40 && grade < 49) {
-        return 'D'
-    }
-    else if (grade > 0 && grade <= 40) {
-        return 'E'
-
-    }
-
-}     
-        
+function studentGrade() {
     
+    let marks = parseFloat(prompt("Enter student marks (between 0 and 100):"));
 
-console.log(studentGrade(40))
+    
+    if (isNaN(marks) || marks < 0 || marks > 100) {
+        console.log("Invalid input. Please enter a number between 0 and 100.");
+        return;
+    }
+
+    
+    let grade;
+    if (marks > 79) {
+        grade = 'A';
+    } else if (marks >= 60) {
+        grade = 'B';
+    } else if (marks >= 50) {
+        grade = 'C';
+    } else if (marks >= 40) {
+        grade = 'D';
+    } else {
+        grade = 'E';
+    }
+
+    
+    console.log(`Grade: ${grade}`);
+}
+
+
+studentGrade();

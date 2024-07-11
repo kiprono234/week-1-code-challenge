@@ -1,14 +1,26 @@
-function velocity(speed){
-    const requiredSpeed = 70;
-    const demeritPoints = 5;
-    if(speed <= 70){
-        return 'Ok'
-    } else if (speed > 70 && speed<=130) {
-        let exceedPoints = (speed - requiredSpeed) / demeritPoints;
-        return `Points: ${exceedPoints}`
-    } else {
-        return 'Licence suspended'
+function checkSpeed() {
+    const speedLimit = 70;
+    const kmPerDemeritPoint = 5;
+    let speed = parseFloat(prompt("Enter the speed of the car (km/h):"))
+    
+    if (isNaN(speed) || speed < 0) {
+        console.log("Invalid input. Please enter a positive number.");
+        return;
     }
+    if (speed <= speedLimit) {
+        console.log("Ok");
+    } else {
+        
+        const demeritPoints = Math.floor((speed - speedLimit) / kmPerDemeritPoint);
 
+        
+        if (demeritPoints > 12) {
+            console.log("License suspended");
+        } else {
+            console.log(`Points: ${demeritPoints}`);
+        }
+    }
 }
-console.log(velocity(0))
+
+
+checkSpeed();

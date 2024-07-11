@@ -129,7 +129,7 @@ Return Statement:
 The function returns an object containing the gross salary, payee (tax), NHIF deductions, NSSF deductions, and net salary.
 
 
-perfect;
+perfect.
 
 
 
